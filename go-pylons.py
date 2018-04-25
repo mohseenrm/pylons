@@ -2300,7 +2300,6 @@ class fileview(object):
         self._pos += len(bytes)
         return bytes
 
-
 def read_data(file, endian, num=1):
     """
     Read a given number of 32-bits unsigned integers from the given file
