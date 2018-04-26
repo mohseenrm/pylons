@@ -791,6 +791,7 @@ def main():
         print('You must provide a DEST_DIR')
         parser.print_help()
         sys.exit(2)
+
     if len(args) > 1:
         print('There must be only one argument: DEST_DIR (you gave %s)' % (
             ' '.join(args)))
