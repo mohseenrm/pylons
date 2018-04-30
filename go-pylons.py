@@ -4,7 +4,6 @@
 """
 Create a "virtual" Python installation
 """
-
 __version__ = "12.0.5"
 virtualenv_version = __version__  # legacy
 
