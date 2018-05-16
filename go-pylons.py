@@ -506,7 +506,6 @@ def writefile(dest, content, overwrite=True):
         else:
             logger.info('Content %s already in place', dest)
 
-
 def rmtree(dir):
     if os.path.exists(dir):
         logger.notify('Deleting tree %s', dir)
