@@ -12,7 +12,8 @@ from hola.config.routing import make_map
 from hola.model import init_model
 
 def load_environment(global_conf, app_conf):
-    """Configure the Pylons environment via the ``pylons.config``
+    """
+    Configure the Pylons environment via the ``pylons.config``
     object
     """
     config = PylonsConfig()

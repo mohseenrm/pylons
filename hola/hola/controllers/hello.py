@@ -5,6 +5,8 @@ from pylons.controllers.util import abort, redirect
 
 from hola.lib.base import BaseController, render
 
+import hola.lib.helpers as h
+
 log = logging.getLogger(__name__)
 
 class HelloController(BaseController):
@@ -13,4 +15,9 @@ class HelloController(BaseController):
         # Return a rendered template
         #return render('/hello.mako')
         # or, return a string
+        response.content_type = 'text/plain'
         return 'Hello from index()'
+
+    def environ(self):
+        response.content_type = 'text/plain'
+        return h.format_environ(request.environ)
