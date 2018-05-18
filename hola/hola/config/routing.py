@@ -1,4 +1,5 @@
-"""Routes configuration
+"""
+Routes configuration
 
 The more specific and detailed routes should be defined first so they
 may take precedent over the more generic routes. For more information
@@ -20,6 +21,7 @@ def make_map(config):
 
     # CUSTOM ROUTES HERE
 
+    map.connect('/', controller='hello', action='index')
     map.connect('/{controller}/{action}')
     map.connect('/{controller}/{action}/{id}')
 
