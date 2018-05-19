@@ -1,6 +1,6 @@
 import logging
 
-from pylons import request, response, session, tmpl_context as c, url
+from pylons import app_globals, request, response, session, tmpl_context as c, url
 from pylons.controllers.util import abort, redirect
 
 from hola.lib.base import BaseController, render
@@ -21,3 +21,7 @@ class HelloController(BaseController):
     def environ(self):
         response.content_type = 'text/plain'
         return h.format_environ(request.environ)
+
+    def app_global_test(self):
+        app_globals.visits += 1
+        return 'Number of visitors so far: %s' % app_globals.visits
