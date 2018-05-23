@@ -25,3 +25,10 @@ class HelloController(BaseController):
     def app_global_test(self):
         app_globals.visits += 1
         return 'Number of visitors so far: %s' % app_globals.visits
+
+    def test_abort(self):
+        username = request.environ.get('REMOTE_USER')
+        if not username:
+            abort(401)
+        else:
+            return 'Hey %s' % username
