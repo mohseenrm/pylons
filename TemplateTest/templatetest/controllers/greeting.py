@@ -17,3 +17,6 @@ class GreetingController(BaseController):
             '/basic_test.html',
             extra_vars={'name': name}
         )
+
+    def context(self):
+        return render('/context.html')
