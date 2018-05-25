@@ -1,9 +1,5 @@
-<html>
-<head>
-    <title>Basic Template Test</title>
-</head>
-<body>
-    <h1>Greetings</h1>
-    <p>Hello ${name}!</p>
-</body>
-</html>
+<%inherit file="/base.html"/>\
+<%def name="title()">Greetings</%def>
+<h1>Greetings</h1>
+
+<p>${c.greeting} ${c.name}!</p>

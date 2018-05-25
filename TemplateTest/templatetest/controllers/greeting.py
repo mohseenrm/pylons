@@ -5,6 +5,8 @@ from pylons.controllers.util import abort, redirect
 
 from templatetest.lib.base import BaseController
 
+import templatetest.lib.helpers as h
+
 from pylons.templating import render_mako as render
 
 log = logging.getLogger(__name__)
@@ -12,11 +14,9 @@ log = logging.getLogger(__name__)
 class GreetingController(BaseController):
 
     def index(self):
-        name =  'Mohseen'
-        return render(
-            '/basic_test.html',
-            extra_vars={'name': name}
-        )
+        c.greeting = h.literal('<b>Welcome</b>')
+        c.name = request.params.get('name', 'Visitor')
+        return render('/basic_test.html')
 
     def context(self):
         return render('/context.html')
